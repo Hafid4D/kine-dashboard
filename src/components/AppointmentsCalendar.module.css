@@ -1,0 +1,47 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* wrapper scrollable */
+.rbc-time-view {
+  height: calc(100% - 40px); /* moins l’en-tête */
+  overflow-y: auto;
+}
+
+/* fixe l’en-tête du calendrier */
+.rbc-time-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  border-bottom: 1px solid #ccc;
+}
+
+/* fixe la colonne des heures */
+.rbc-time-gutter {
+  position: sticky;
+  left: 0;
+  background: #f5f5f5;
+  z-index: 5;
+}
