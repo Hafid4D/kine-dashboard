@@ -1,16 +1,18 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styles from './Sidebar.module.css'
+import React from 'react';
+import styles from './Sidebar.module.css';
+import logo from '../assets/logo.png'; // ton logo ici
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, toggleSidebar }) {
   return (
-    <aside className={styles.sidebar}>
-      <NavLink to="/patients" className={({ isActive }) => isActive ? styles.active : ''}>
-        👥 Patients
-      </NavLink>
-      <NavLink to="/calendrier" className={({ isActive }) => isActive ? styles.active : ''}>
-        📅 Rendez-vous
-      </NavLink>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+      <div className={styles.logoContainer}>
+        <img src={logo} alt="Logo Cabinet" className={styles.logo} />
+      </div>
+      <nav className={styles.nav}>
+        <a href="/">Patients</a>
+        <a href="/calendrier">Calendrier</a>
+        {/* autres liens */}
+      </nav>
     </aside>
-  )
+  );
 }
