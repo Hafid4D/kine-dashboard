@@ -1,0 +1,154 @@
+.list {
+  flex: 1;
+  max-width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px); /* prend presque toute la hauteur */
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+/* Barre de recherche stylée */
+.search {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+/* Liste scrollable */
+.scrollList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;           /* prend tout l'espace restant */
+  overflow-y: auto;  /* scroll si nécessaire */
+}
+
+.scrollList li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.scrollList li:hover {
+  background-color: #e0f7fa;
+}
+
+.selected {
+  background-color: #b2ebf2;
+  font-weight: bold;
+}
+
+/* Groupe de boutons */
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Hauteur et style identiques pour les deux boutons */
+.buttonGroup button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  color: white;
+}
+
+/* Bouton Ajouter */
+.addButton {
+  background-color: #1abc9c;
+}
+
+.addButton:hover {
+  background-color: #16a085;
+  transform: translateY(-2px);
+}
+
+/* Bouton Supprimer */
+.deleteButton {
+  background-color: #e74c3c;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formButtons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.formButtons button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.formButtons button[type="submit"] {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.formButtons button[type="button"] {
+  background-color: #e74c3c;
+  color: white;
+}
